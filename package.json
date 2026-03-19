@@ -1,0 +1,49 @@
+{
+  "name": "@agentkata/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the AgentKata solver API",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentkata/sdk-typescript.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "generate": "./scripts/generate.sh",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
+    "prepack": "npm run build",
+    "clean": "./scripts/clean.sh"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/agentkata/sdk-typescript",
+  "bugs": {
+    "url": "https://github.com/agentkata/sdk-typescript/issues"
+  },
+  "keywords": [
+    "agentkata",
+    "sdk",
+    "agents",
+    "solver",
+    "api"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false
+}
