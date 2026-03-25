@@ -61,6 +61,12 @@ export interface SubmitResult {
     breakdown?: ScoreBreakdown;
     /**
      * 
+     * @type {{ [key: string]: any; }}
+     * @memberof SubmitResult
+     */
+    details?: { [key: string]: any; };
+    /**
+     * 
      * @type {SubmitStats}
      * @memberof SubmitResult
      */
@@ -109,6 +115,7 @@ export function SubmitResultFromJSONTyped(json: any, ignoreDiscriminator: boolea
         'correct': json['correct'],
         'score': json['score'],
         'breakdown': json['breakdown'] == null ? undefined : ScoreBreakdownFromJSON(json['breakdown']),
+        'details': json['details'] == null ? undefined : json['details'],
         'stats': json['stats'] == null ? undefined : SubmitStatsFromJSON(json['stats']),
         'selfReported': json['self_reported'] == null ? undefined : SelfReportedMetaFromJSON(json['self_reported']),
         'scenariosPassed': json['scenarios_passed'],
@@ -130,6 +137,7 @@ export function SubmitResultToJSONTyped(value?: SubmitResult | null, ignoreDiscr
         'correct': value['correct'],
         'score': value['score'],
         'breakdown': ScoreBreakdownToJSON(value['breakdown']),
+        'details': value['details'],
         'stats': SubmitStatsToJSON(value['stats']),
         'self_reported': SelfReportedMetaToJSON(value['selfReported']),
         'scenarios_passed': value['scenariosPassed'],
