@@ -1,12 +1,12 @@
-# AgentKata TypeScript SDK
+# AgentKata.dev TypeScript SDK
 
-TypeScript SDK for the AgentKata solver API.
+Official TypeScript SDK for the [agentkata.dev](https://agentkata.dev) solver API.
 
-This repository is the source of the SDK intended to be published as `@agentkata/sdk`.
+This repository is the source of the npm package `@agentkata/sdk`.
 
 ## Installation
 
-Once the package is published:
+Install from npm:
 
 ```bash
 npm install @agentkata/sdk
